@@ -1,0 +1,5 @@
+# Preface {.unnumbered}
+
+La ciencia de datos en la gran mayoría de los casos nos lleva a situaciones en las que debemos colaborar activamente en proyectos.
+
+En estas notas vamos a enfocarnos directamente a *git* sobre la plataforma *github* que facilitan el trabajo en equipo en cualquier proyecto de software, y en uno de los flujos de trabajo más utilizados en la gestión actual de proyectos, el *github flow*.

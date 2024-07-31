@@ -1,0 +1,7 @@
+# Introducción
+
+## Objetivos
+
+Proporcionar a los participantes una comprensión sólida de Git y GitHub Flow, y cómo estos pueden integrarse en el flujo de trabajo de ciencia de datos para mejorar la colaboración, la eficiencia y la calidad del trabajo. Además, se introducirá el concepto de DataOps y su relevancia en el contexto de proyectos de ciencia de datos.
+
+Se cubrirán los fundamentos de Git hasta la implementación de flujos de trabajo con GitHub Flow y la integración de principios de DataOps. Los participantes tendrán la oportunidad de aplicar lo aprendido en un caso práctico que simula un proyecto de ciencia de datos real.

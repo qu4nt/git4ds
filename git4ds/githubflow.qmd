@@ -1,0 +1,116 @@
+# Github Flow
+
+*GitHub Flow* es un flujo de trabajo ligero y eficiente para el uso de Git en proyectos de software. Es particularmente adecuado para equipos que desean iterar rápidamente y desplegar con frecuencia. Este flujo de trabajo incluye la creación de ramas para nuevas características o correcciones de errores, la realización de Pull Requests para revisión de código y la integración continua para asegurar que los cambios se pueden fusionar de manera segura en la rama principal.
+
+![](images/paste-2.png)
+
+**Ejercicio: Análisis Exploratorio de Datos de los Pingüinos de Palmer**
+
+**Descripción:**
+
+El conjunto de datos de los pingüinos de Palmer contiene información sobre tres especies de pingüinos que anidan en la Antártida. Realizaremos un análisis exploratorio para comprender mejor las características de cada especie y cómo se relacionan entre sí.
+
+**Pasos a seguir:**
+
+1.  **Crear un nuevo repositorio en GitHub:**
+
+    -   **Nombre:** palmer-penguins-eda
+
+    -   **Descripción:** Análisis exploratorio de datos de los pingüinos de Palmer
+
+2.  **Clonar el repositorio:**
+
+    -   `git clone https://github.com/tu_usuario/palmer-penguins-eda.git`
+
+3.  **Planificar las tareas**
+
+    Indicar las tareas básicas a realizar como *issues*.
+
+    -   Instalar dependencias y configurar el entorno virtual
+
+    -   Crear la estructura de archivos
+
+    -   Cargar los datos
+
+    -   Crear la primera versión en un cuaderno de jupyter
+
+4.  **Crear una nueva rama:**
+
+    -   `git checkout -b analisis_exploratorio`
+
+5.  **Instalar las librerías necesarias:**
+
+    -   Crear un archivo `requirements.txt` con las librerías requeridas (por ejemplo, `pandas`, `numpy`, `matplotlib`, `seaborn`).
+
+    -   Instalar las librerías: `pip install -r requirements.txt`
+
+6.  **Descargar el conjunto de datos:**
+
+    -   Descargar el conjunto de datos desde el repositorio de GitHub: <https://github.com/allisonhorst/palmerpenguins>
+
+    -   Guardarlo en una carpeta llamada `data` dentro del proyecto.
+
+7.  **Realizar el análisis exploratorio:**
+
+    -   Crear un notebook Jupyter (por ejemplo, `analisis_exploratorio.ipynb`) y realizar las siguientes tareas:
+
+        -   Cargar los datos utilizando pandas.
+
+        -   Explorar las primeras filas del DataFrame para familiarizarse con los datos.
+
+        -   Obtener información estadística resumida (media, desviación estándar, etc.) utilizando `describe()`.
+
+        -   Visualizar la distribución de las variables numéricas (histograma, boxplot).
+
+        -   Explorar la relación entre variables numéricas (diagrama de dispersión).
+
+        -   Comparar las características de las diferentes especies (boxplot, gráficos de violín).
+
+8.  **Ejemplo de código en Python (Jupyter Notebook):**
+
+Python
+
+```         
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Cargar los datos
+penguins = pd.read_csv("data/penguins.csv")
+
+# Exploración inicial
+print(penguins.head())
+print(penguins.describe())
+
+# Histograma de la longitud del pico
+sns.histplot(data=penguins, x="bill_length_mm", hue="species")
+plt.show()
+
+# Diagrama de caja de la masa corporal por especie
+sns.boxplot(x="species", y="body_mass_g", data=penguins)
+plt.show()
+```
+
+8.  **Commit de los cambios:**
+
+    -   `git add .`
+
+    -   `git commit -m "Análisis exploratorio inicial de los pingüinos"`
+
+9.  **Push de los cambios al repositorio remoto:**
+
+    -   `git push origin analisis_exploratorio`
+
+10. **Crear un pull request:**
+
+-   Crear un pull request en GitHub desde la rama `analisis_exploratorio` hacia la rama `main`.
+
+**Ampliando el ejercicio:**
+
+-   **Preprocesamiento de datos:** Manejar valores faltantes, transformar variables categóricas.
+
+-   **Análisis más profundo:** Explorar la relación entre variables categóricas y numéricas, realizar pruebas estadísticas.
+
+-   **Visualizaciones:** Crear visualizaciones más sofisticadas (pairplots, heatmaps).
+
+-   **Modelado:** Construir modelos de clasificación para predecir la especie de un pingüino basándose en sus características.

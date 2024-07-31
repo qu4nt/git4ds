@@ -1,0 +1,26 @@
+project:
+  type: book
+
+book:
+  title: "Git para Ciencia de Datos"
+  author: "Francisco Palm"
+  date: "26/7/2024"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - git.qmd
+    - githubflow.qmd
+    - dataops.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+

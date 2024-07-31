@@ -1,0 +1,152 @@
+# Git
+
+*Git* es un *sistema de control de versiones* *distribuido* que permite a los equipos de desarrollo colaborar en proyectos de manera eficiente, rastreando cambios en el código fuente a lo largo del tiempo.
+
+-   Un sistema de control de versiones, es una herramienta de software que permite hacer seguimiento de *quién* hizo *cuál* cambio y *cuando* lo hizo.
+
+-   Distribuido quiere decir que en lugar de haber un único servidor que mantiene el registros de los cambios. Cada colaborador del proyecto tiene una copia, generalmente parcial, del proyecto, y de esta manera se convierte en un nodo de una red.
+
+> Veamos por ejemplo el historial del artículo de la Wikipedia en español sobre los Juegos Olímpicos: <https://es.wikipedia.org/w/index.php?title=Juegos_Olímpicos_de_París_2024&action=history>
+
+![](images/paste-1.png)
+
+Para hacerlo tiene que llevar un *registro* de los cambios. Un cambio se define como las modificaciones que llevan tu código desde el último estado registrado hacia un nuevo estado. Git está diseñado para detectar cambios en línea a línea en archivos texto.
+
+Las cambios se identifican criptográficamente, por lo que nunca cambian: - Los archivos involucrados. - Las diferencias entre los estados. - El historial de cambios, y - El autor y la descripción.
+
+Por limitaciones de tiempo no se van a presentar detalles de la instalación de Git en tu sistema, pero en general te recomendamos el siguiente recurso para una introducción más pausada a Git:
+
+-   <https://swcarpentry.github.io/git-novice/index.html>
+
+-   <https://swcarpentry.github.io/git-novice-es/index.html> (versión en español)
+
+[GitHub](https://github.com/), por otro lado, es una plataforma basada en la web que utiliza Git para proporcionar una variedad de herramientas de colaboración, incluyendo la gestión de repositorios, seguimiento de problemas y revisiones de código.
+
+Existen otros servicios alternativos con características similares como [Gitlab](https://about.gitlab.com/) o [Bitbucket](https://bitbucket.org), y herramientas de código abierto que puedes instalar en tu propia computadora como la [versión comunitaria de código abierto de gitlab](https://about.gitlab.com/install/) o [gitea](https://about.gitea.com/).
+
+## Funciones básicas
+
+### Configuración
+
+Ajustes de la información y entorno del usuario en todos los repositorios.
+
+``` {.bash}
+git config --global user.name “[firstname lastname]”
+
+git config --global user.email “[valid-email]”
+
+git config --global color.ui auto
+```
+
+### Iniciar un repositorio
+
+Inicializar y crear repositorios.
+
+``` {.bash}
+git init
+
+git clone [url]
+```
+
+### Registro de cambios
+
+Uso de la área de preparación y registro de cambios
+
+``` {.bash}
+git status
+
+git add [file]
+
+git reset [file]
+
+git diff
+
+git diff --staged
+
+git commit -m “[descriptive message]”
+```
+
+### Ramas y seguimiento
+
+Aislando el trabajo en ramas, cambiando de contexto, e integrando cambios.
+
+``` {.bash}
+git branch
+
+git branch [branch-name]
+
+git checkout
+
+git merge [branch]
+
+git log
+```
+
+### Seguimiento y comparación
+
+Verificando los registros, las diferencias, y la información de los objetos.
+
+``` {.bash}
+git log
+
+git log branchB..branchA
+
+git log --follow [file]
+
+git diff branchB...branchA
+
+git show [SHA]
+```
+
+### Compartir y actualizar
+
+Obtener cambios de otras instancias hacia mi repositorio, y actualizar otras instancias a partir de la mía.
+
+``` {.bash}
+git remote add [alias] [url]
+
+git fetch [alias]
+
+git merge [alias]/[branch]
+
+git push [alias] [branch]
+
+git pull
+```
+
+
+### Registro de cambio de rutas
+
+Versionado de eliminaciones y cambios de ruta.
+
+``` {.bash}
+git rm [file]
+
+git mv [existing-path] [new-path]
+
+git log --stat -M
+```
+
+### Reescribir la historia
+
+Reescribiendo ramas, actualizar registros y limpiar la historia.
+
+``` {.bash}
+git rebase [branch]
+
+git reset --hard [commit]
+```
+
+### Registro temporal
+
+Almacenar temporalmente modificaciones no registradas en archivos bajo seguimiento.
+
+``` {.bash}
+git stash
+
+git stash list
+
+git stash pop
+
+git stash drop
+```
